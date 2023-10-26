@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Penyetaraan Ijazah Luar Negeri (PILN) melayani penyetaraan ijazah dan konversi nilai untuk lulusan luar negeri">
+  <meta name="author" content="KEMENDIKBUDRISTEK">
+  <meta name="keywords" content="penyetaraan ijazah, konversi nilai, peninjauan kembali, piln, ijazahln, dikti, belmawa, kemendikbud, luar negeri">
+  <meta name="csrf-token" content="GDXl1xU72wjetrE8vy3bpxXr2i8Bz4sLwKVMbSj0">
+
+  <title>Login</title>
+
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css">
+
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+
+
+  <!-- Custom styles for this template-->
+  <link href="https://piln.kemdikbud.go.id/assets/css/sb-admin-2.css" rel="stylesheet">
+
+  <!-- Magnific Popup -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css"
+    integrity="sha512-WEQNv9d3+sqyHjrqUZobDhFARZDko2wpWdfcpv44lsypsSuMO0kHGd3MQ8rrsBn/Qa39VojphdU6CMkpJUmDVw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Master CSS -->
+  <link href="https://piln.kemdikbud.go.id/assets/css/master.css" rel="stylesheet">
+
+  <!-- Material Icon -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Select2 -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+  <!-- Jquery UI -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+  <!-- Filepond Style -->
+  <link rel="stylesheet" href="https://piln.kemdikbud.go.id/assets/css/filepond.min.css">
+
+    <!-- Bootstrap core JavaScript-->
+  <script src="https://piln.kemdikbud.go.id/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="https://piln.kemdikbud.go.id/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <!-- Sweet Alert -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <!-- Select2 -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <!-- Jquery UI -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+  <!-- Data Table (Yajra)-->
+  
+  
+  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.0.0/tinymce.min.js"
+    integrity="sha512-XQOOk3AOZDpVgRcau6q9Nx/1eL0ATVVQ+3FQMn3uhMqfIwphM9rY6twWuCo7M69rZPdowOwuYXXT+uOU91ktLw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bs-stepper/dist/js/bs-stepper.min.js"></script>
+
+  
+  <script src="https://piln.kemdikbud.go.id/assets/vendor/filepond/filepond.min.js"></script>
+  <script src="https://piln.kemdikbud.go.id/assets/vendor/filepond/filepond.jquery.js"></script>
+  <script src="https://piln.kemdikbud.go.id/assets/vendor/filepond/filepond-plugin-file-validate-size.min.js"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js">
+  </script>
+
+  </head>
+
+<body style="padding-top: 5rem">
+   <div class="navigation-container mb-5">
+   <nav class="navbar navbar-expand-xxl navbar-light bg-light justify-content-between fixed-top">
+      
+         <img src="https://piln.kemdikbud.go.id/assets/images/logoKemdikbud.png" height="50" class="d-none d-lg-block">
+         <span style="font-size: 1.1em; font-weight: bold">KEMENDIKBUDRISTEK</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+      </button>
+     
+   </nav>
+</div>
+   <div id="content">
+      <div class="my-3">
+               </div>
+         <div class="container h-100 d-flex align-items-center justify-content-center">
+      <div class="card o-hidden border-0 shadow-lg mb-lg-5" style="width: 100%">
+         <div class="card-body p-0">
+            <div class="row">
+               <div class="col-lg-6 d-none d-lg-block p-0">
+                  <img src="https://piln.kemdikbud.go.id/assets/images/cover-login1.png" class="d-none d-lg-block w-100 h-100"
+                     style="object-fit: cover;">
+               </div>
+               <div class="col-lg-6 col-md-12" style="max-width: 90vw">
+                  <div class="container-login d-flex justify-content-center flex-column h-100">
+                     <div class="text-center">
+                        <h1 class="h4 text-gray-900 mb-4">Informasi Akun</h1>
+                     </div>
+                     <form class="user" method="POST" action="https://piln.kemdikbud.go.id/login">
+                        <input type="hidden" name="_token" value="GDXl1xU72wjetrE8vy3bpxXr2i8Bz4sLwKVMbSj0">                        <div class="form-group mb-3">
+                           <label for="email" class="required form-label">
+                              Email
+                           </label>
+                           <input type="email" class="form-control form-control-user" id="email" name="email"
+                              value="" placeholder="Masukkan Email Anda">
+                        </div>
+                        <div class="form-group mb-3">
+                           <label for="email" class="required form-label">
+                              Kata Sandi
+                           </label>
+                           <input type="password" name="password" id="password" class="form-control form-control-user" placeholder="Masukkan Password Anda">
+                        </div>
+                        <div class="form-group mb-3">
+                           <a href="https://piln.kemdikbud.go.id/forgot/password" class=""><u>Lupa password?</u></a>
+                        </div>
+                       <button class="btn btn-primary btn-user btn-block">
+                         Login
+                       </button>
+                        <div class="text-center mt-3">
+                           <p class="">Belum memiliki akun? <a href="https://piln.kemdikbud.go.id/register" id="daftar"><u>Daftar</u></a>
+                           </p>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <!-- Core plugin JavaScript-->
+<script src="https://piln.kemdikbud.go.id/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="https://piln.kemdikbud.go.id/assets/js/sb-admin-2.min.js"></script>
+
+<!-- Magnific Popup -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"
+   integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w=="
+   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script type="text/javascript" src="https://piln.kemdikbud.go.id/vendor/jsvalidation/js/jsvalidation.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css"
+   integrity="sha512-cyzxRvewl+FOKTtpBzYjW6x6IAYUCZy3sGP40hn+DQkqeluGRCax7qztK2ImL64SA+C7kVWdLI6wvdlStawhyw=="
+   crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"
+   integrity="sha512-6lplKUSl86rUVprDIjiW8DuOniNX8UDoRATqZSds/7t6zCQZfaCe3e5zcGaQwxa8Kpn5RTM9Fvl3X2lLV4grPQ=="
+   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.bootstrap.min.css">
+<script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.4.0/js/responsive.bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="main.js"></script>
+
+
+<script>
+   const DATE_LOCALE = 'id';
+   const GENERIC_DATEPICKER_OPTIONS = {
+      changeMonth: true,
+      changeYear: true,
+      dateFormat: "dd/mm/yy",
+      yearRange: "1900:+nn",
+   };
+
+   $(document).ready(function() {
+      $(function() {
+         $('[data-toggle="tooltip"]').tooltip({
+            container: 'body',
+            html: true
+         });
+         $(".datepicker").datepicker(GENERIC_DATEPICKER_OPTIONS);
+         $(".click-tooltip-class").click(function() {
+            var dataId = $(this).data("hint");
+            $(`#${dataId}`).toggle();
+         })
+      });
+
+      $.ajaxSetup({
+         headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+         }
+      });
+
+      addRequiredStar();
+      generateHint();
+
+      // tinyMCE
+      if ($(".myeditor")[0]) {
+         const example_image_upload_handler = (blobInfo, progress) => new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.withCredentials = false;
+            xhr.open('POST', "https://piln.kemdikbud.go.id/upload");
+            xhr.upload.onprogress = (e) => {
+               progress(e.loaded / e.total * 100);
+            };
+            xhr.onload = () => {
+               if (xhr.status === 403) {
+                  reject({
+                     message: 'HTTP Error: ' + xhr.status,
+                     remove: true
+                  });
+                  return;
+               }
+               if (xhr.status < 200 || xhr.status >= 300) {
+                  reject('HTTP Error: ' + xhr.status);
+                  return;
+               }
+               const json = JSON.parse(xhr.responseText);
+               if (!json || typeof json.location != 'string') {
+                  reject('Invalid JSON: ' + xhr.responseText);
+                  return;
+               }
+               resolve(json.location);
+            };
+
+            xhr.onerror = () => {
+               reject('Image upload failed due to a XHR Transport error. Code: ' + xhr.status);
+            };
+
+            const formData = new FormData();
+            formData.append('file', blobInfo.blob(), blobInfo.filename());
+            xhr.setRequestHeader('X-CSRF-TOKEN', $('meta[name="csrf-token"]').attr('content'));
+            xhr.send(formData);
+         });
+
+         tinymce.init({
+            selector: 'textarea.myeditor',
+            path_absolute: "https://piln.kemdikbud.go.id" + "/",
+            plugins: [
+               "image", "lists"
+            ],
+            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+            automatic_uploads: true,
+            relative_urls: false,
+            convert_urls: false,
+            images_upload_url: "https://piln.kemdikbud.go.id/upload",
+            file_picker_types: 'image',
+            images_upload_handler: example_image_upload_handler,
+            file_picker_callback: function(cb, value, meta) {
+               var input = document.createElement('input');
+               input.setAttribute('type', 'file');
+               input.setAttribute('accept', 'image/*');
+
+               input.onchange = function() {
+                  var file = this.files[0];
+
+                  var reader = new FileReader();
+                  reader.onload = function() {
+                     var id = 'blobid' + (new Date()).getTime();
+                     var blobCache = tinymce.activeEditor.editorUpload.blobCache;
+                     var base64 = reader.result.split(',')[1];
+                     var blobInfo = blobCache.create(id, file, base64);
+                     blobCache.add(blobInfo);
+
+                     /* call the callback and populate the Title field with the file name */
+                     cb(blobInfo.blobUri(), {
+                        title: file.name
+                     });
+                  };
+                  reader.readAsDataURL(file);
+               };
+
+               input.click();
+            }
+         });
+      }
+
+      // swal logout
+      $(".link-logout").click(function(e) {
+         e.preventDefault();
+         swal({
+            title: "Apakah anda ingin keluar dari sesi ini?",
+            icon: "warning",
+            buttons: {
+               cancel: {
+                  text: "Batal",
+                  value: null,
+                  visible: true,
+                  className: "",
+                  closeModal: true,
+               },
+               confirm: true,
+            },
+         }).then((value) => {
+            if (value) {
+               window.location.href = $('.link-logout').attr('href');
+            }
+         });
+      })
+
+      $(document).on("click", ".open-popup", function(e) {
+         $(this).magnificPopup({
+            type: 'inline',
+            showCloseBtn: false,
+            callbacks: {
+               beforeOpen: function() {
+                  if ($(window).width() < 700) {
+                     this.st.focus = false;
+                  } else {
+                     this.st.focus = '#name';
+                  }
+               }
+            }
+         }).magnificPopup('open');
+      });
+
+      $(document).on("click", ".close-popup", function(e) {
+         $.magnificPopup.close();
+      });
+   });
+
+   function addRequiredStar() {
+      let requiredStar = $("<span>")
+         .text("*")
+         .css("color", "#E74A3B");
+      $("label.required").append(requiredStar);
+   }
+
+   function initPopupHint() {
+      $('.pop-up-hint').magnificPopup({
+         type: 'inline',
+         preloader: false,
+         focus: '#name',
+
+         // When elemened is focused, some mobile browsers in some cases zoom in
+         // It looks not nice, so we disable it:
+         callbacks: {
+            beforeOpen: function() {
+               if ($(window).width() < 700) {
+                  this.st.focus = false;
+               } else {
+                  this.st.focus = '#name';
+               }
+            }
+         }
+      });
+   }
+
+   function generateHint() {
+      let selectedLabels = document.getElementsByClassName('need-hint');
+      let allFields = [...selectedLabels]
+         .map(el => el.htmlFor)
+         .filter(fieldName => (fieldName || "").length > 0);
+      let uniqueFields = [...new Set(allFields)];
+
+      const createHintModal = (mapLabelHint) => {
+         const mapHintModalId = Object.fromEntries(
+            Object.keys(mapLabelHint).map(fieldName => [fieldName, `${fieldName}_hint`])
+         );
+         Object.keys(mapLabelHint).forEach(fieldName => {
+            let modal = $("<div>")
+               .addClass("mfp-hide white-popup-block")
+               .prop("id", mapHintModalId[fieldName])
+               .html(`<p>${mapLabelHint[fieldName]}</p>`)
+            $("#hint-container").append(modal);
+         });
+         return mapHintModalId;
+      };
+
+      const putHintToLabels = (mapLabelHint, mapHintModalId) => {
+         $(selectedLabels).each(function() {
+            let fieldName = $(this).prop('for');
+            if ((fieldName || "").length > 0) {
+               let hintIcon = $("<a>")
+                  .addClass(
+                     "fa fa-info-circle click-tooltip-class text-dark text-decoration-none pop-up-hint pl-1"
+                  )
+                  .attr("aria-hidden", true)
+                  .prop("href", `#${mapHintModalId[fieldName]}`);
+               $(this).append(hintIcon);
+            }
+         });
+      };
+
+      if (uniqueFields.length > 0) {
+         $.ajax({
+            method: "POST",
+            url: "https://piln.kemdikbud.go.id/hint",
+            data: {
+               field_name: uniqueFields
+            },
+            success: function(data) {
+               let mapHintModalId = createHintModal(data);
+               putHintToLabels(data, mapHintModalId);
+               initPopupHint();
+            }
+         });
+      }
+   }
+
+   function getFullDate(stringDate) {
+      const date = new Date(stringDate);
+
+      const month = date.toLocaleString(DATE_LOCALE, {
+         month: "long"
+      });
+      const day = date.getDate();
+      const year = date.getFullYear();
+      const hour = date.getHours();
+      const time = date.getTime();
+      const minute = ('0' + date.getMinutes()).slice(-2);
+      const second = ('0' + date.getSeconds()).slice(-2);
+
+      return {
+         time,
+         day,
+         month,
+         year,
+         hour,
+         minute,
+         second
+      }
+   }
+
+   function swalOnRequest(isSuccess, successMessage, errorMessage) {
+
+      let swalPayload = {}
+      if (isSuccess) {
+         swalPayload = {
+            title: "Sukses",
+            text: successMessage,
+            icon: 'success',
+         }
+
+      } else {
+         swalPayload = {
+            title: "Gagal",
+            text: errorMessage,
+            icon: 'error',
+         };
+
+      }
+      swal(swalPayload);
+   }
+
+   const createImageCropper = () => ({
+      modal: null,
+      image: null,
+      cropper: null,
+      outputText: null,
+      initModal: function(modalSelector) {
+         this.modal = $(modalSelector);
+
+      },
+      initImage: function(imageSelector) {
+         this.image = document.querySelector(imageSelector);
+      },
+      initOutput: function(inputTextSelector) {
+         this.outputText = $(inputTextSelector);
+      },
+      initCropper: function(aspectRatio) {
+         const that = this;
+         this.modal.on('shown.bs.modal', function() {
+            that.cropper = new Cropper(that.image, {
+               aspectRatio,
+               viewMode: 3,
+               preview: '.preview'
+            });
+         }).on('hidden.bs.modal', function() {
+            that.cropper.destroy();
+            that.cropper = null;
+         });
+      },
+      initInputImage: function(inputImageSelector) {
+         const that = this;
+         $("body").on("change", inputImageSelector, function(e) {
+
+            const isInputValid = $(inputImageSelector).valid();
+
+            if (!isInputValid) return;
+
+            let files = e.target.files;
+            let done = function(url) {
+               that.image.src = url;
+               that.modal.modal('show');
+            };
+            let reader;
+            let file;
+            let url;
+            if (files && files.length > 0) {
+               file = files[0];
+               if (URL) {
+                  done(URL.createObjectURL(file));
+               } else if (FileReader) {
+                  reader = new FileReader();
+                  reader.onload = function(e) {
+                     done(reader.result);
+                  };
+                  reader.readAsDataURL(file);
+               }
+            }
+         });
+      },
+      doCropOnClick: function(buttonSelector, outputSize) {
+         const that = this;
+         const button = $(buttonSelector);
+         button.click(function() {
+            canvas = that.cropper.getCroppedCanvas({
+               width: outputSize.width,
+               height: outputSize.height,
+            });
+            canvas.toBlob(function(blob) {
+               let reader = new FileReader();
+               reader.readAsDataURL(blob);
+               reader.onloadend = function() {
+                  let base64data = reader.result;
+                  that.outputText.val(base64data);
+                  that.modal.modal('hide');
+               }
+            });
+         });
+      }
+   });
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Penyetaraan Ijazah Luar Negeri (PILN) melayani penyetaraan ijazah dan konversi nilai untuk lulusan luar negeri">
+  <meta name="author" content="KEMENDIKBUDRISTEK">
+  <meta name="keywords" content="penyetaraan ijazah, konversi nilai, peninjauan kembali, piln, ijazahln, dikti, belmawa, kemendikbud, luar negeri">
+  <meta name="csrf-token" content="GDXl1xU72wjetrE8vy3bpxXr2i8Bz4sLwKVMbSj0">
+
+  <title>Login</title>
+
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css">
+
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+
+
+  <!-- Custom styles for this template-->
+  <link href="https://piln.kemdikbud.go.id/assets/css/sb-admin-2.css" rel="stylesheet">
+
+  <!-- Magnific Popup -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css"
+    integrity="sha512-WEQNv9d3+sqyHjrqUZobDhFARZDko2wpWdfcpv44lsypsSuMO0kHGd3MQ8rrsBn/Qa39VojphdU6CMkpJUmDVw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Master CSS -->
+  <link href="https://piln.kemdikbud.go.id/assets/css/master.css" rel="stylesheet">
+
+  <!-- Material Icon -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Select2 -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+  <!-- Jquery UI -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+  <!-- Filepond Style -->
+  <link rel="stylesheet" href="https://piln.kemdikbud.go.id/assets/css/filepond.min.css">
+
+    <!-- Bootstrap core JavaScript-->
+  <script src="https://piln.kemdikbud.go.id/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="https://piln.kemdikbud.go.id/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <!-- Sweet Alert -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <!-- Select2 -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <!-- Jquery UI -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+  <!-- Data Table (Yajra)-->
+  
+  
+  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.0.0/tinymce.min.js"
+    integrity="sha512-XQOOk3AOZDpVgRcau6q9Nx/1eL0ATVVQ+3FQMn3uhMqfIwphM9rY6twWuCo7M69rZPdowOwuYXXT+uOU91ktLw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bs-stepper/dist/js/bs-stepper.min.js"></script>
+
+  
+  <script src="https://piln.kemdikbud.go.id/assets/vendor/filepond/filepond.min.js"></script>
+  <script src="https://piln.kemdikbud.go.id/assets/vendor/filepond/filepond.jquery.js"></script>
+  <script src="https://piln.kemdikbud.go.id/assets/vendor/filepond/filepond-plugin-file-validate-size.min.js"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js">
+  </script>
+
+  </head>
+
+<body style="padding-top: 5rem">
+   <div class="navigation-container mb-5">
+   <nav class="navbar navbar-expand-xxl navbar-light bg-light justify-content-between fixed-top">
+      
+         <img src="https://piln.kemdikbud.go.id/assets/images/logoKemdikbud.png" height="50" class="d-none d-lg-block">
+         <span style="font-size: 1.1em; font-weight: bold">KEMENDIKBUDRISTEK</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+      </button>
+     
+   </nav>
+</div>
+   <div id="content">
+      <div class="my-3">
+               </div>
+         <div class="container h-100 d-flex align-items-center justify-content-center">
+      <div class="card o-hidden border-0 shadow-lg mb-lg-5" style="width: 100%">
+         <div class="card-body p-0">
+            <div class="row">
+               <div class="col-lg-6 d-none d-lg-block p-0">
+                  <img src="https://piln.kemdikbud.go.id/assets/images/cover-login1.png" class="d-none d-lg-block w-100 h-100"
+                     style="object-fit: cover;">
+               </div>
+               <div class="col-lg-6 col-md-12" style="max-width: 90vw">
+                  <div class="container-login d-flex justify-content-center flex-column h-100">
+                     <div class="text-center">
+                        <h1 class="h4 text-gray-900 mb-4">Informasi Akun</h1>
+                     </div>
+                     <form class="user" method="POST" action="https://piln.kemdikbud.go.id/login">
+                        <input type="hidden" name="_token" value="GDXl1xU72wjetrE8vy3bpxXr2i8Bz4sLwKVMbSj0">                        <div class="form-group mb-3">
+                           <label for="email" class="required form-label">
+                              Email
+                           </label>
+                           <input type="email" class="form-control form-control-user" id="email" name="email"
+                              value="" placeholder="Masukkan Email Anda">
+                        </div>
+                        <div class="form-group mb-3">
+                           <label for="email" class="required form-label">
+                              Kata Sandi
+                           </label>
+                           <input type="password" name="password" id="password" class="form-control form-control-user" placeholder="Masukkan Password Anda">
+                        </div>
+                        <div class="form-group mb-3">
+                           <a href="https://piln.kemdikbud.go.id/forgot/password" class=""><u>Lupa password?</u></a>
+                        </div>
+                       <button class="btn btn-primary btn-user btn-block">
+                         Login
+                       </button>
+                        <div class="text-center mt-3">
+                           <p class="">Belum memiliki akun? <a href="https://piln.kemdikbud.go.id/register" id="daftar"><u>Daftar</u></a>
+                           </p>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <!-- Core plugin JavaScript-->
+<script src="https://piln.kemdikbud.go.id/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="https://piln.kemdikbud.go.id/assets/js/sb-admin-2.min.js"></script>
+
+<!-- Magnific Popup -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"
+   integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w=="
+   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script type="text/javascript" src="https://piln.kemdikbud.go.id/vendor/jsvalidation/js/jsvalidation.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css"
+   integrity="sha512-cyzxRvewl+FOKTtpBzYjW6x6IAYUCZy3sGP40hn+DQkqeluGRCax7qztK2ImL64SA+C7kVWdLI6wvdlStawhyw=="
+   crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"
+   integrity="sha512-6lplKUSl86rUVprDIjiW8DuOniNX8UDoRATqZSds/7t6zCQZfaCe3e5zcGaQwxa8Kpn5RTM9Fvl3X2lLV4grPQ=="
+   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.bootstrap.min.css">
+<script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.4.0/js/responsive.bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="main.js"></script>
+
+
+<script>
+   const DATE_LOCALE = 'id';
+   const GENERIC_DATEPICKER_OPTIONS = {
+      changeMonth: true,
+      changeYear: true,
+      dateFormat: "dd/mm/yy",
+      yearRange: "1900:+nn",
+   };
+
+   $(document).ready(function() {
+      $(function() {
+         $('[data-toggle="tooltip"]').tooltip({
+            container: 'body',
+            html: true
+         });
+         $(".datepicker").datepicker(GENERIC_DATEPICKER_OPTIONS);
+         $(".click-tooltip-class").click(function() {
+            var dataId = $(this).data("hint");
+            $(`#${dataId}`).toggle();
+         })
+      });
+
+      $.ajaxSetup({
+         headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+         }
+      });
+
+      addRequiredStar();
+      generateHint();
+
+      // tinyMCE
+      if ($(".myeditor")[0]) {
+         const example_image_upload_handler = (blobInfo, progress) => new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.withCredentials = false;
+            xhr.open('POST', "https://piln.kemdikbud.go.id/upload");
+            xhr.upload.onprogress = (e) => {
+               progress(e.loaded / e.total * 100);
+            };
+            xhr.onload = () => {
+               if (xhr.status === 403) {
+                  reject({
+                     message: 'HTTP Error: ' + xhr.status,
+                     remove: true
+                  });
+                  return;
+               }
+               if (xhr.status < 200 || xhr.status >= 300) {
+                  reject('HTTP Error: ' + xhr.status);
+                  return;
+               }
+               const json = JSON.parse(xhr.responseText);
+               if (!json || typeof json.location != 'string') {
+                  reject('Invalid JSON: ' + xhr.responseText);
+                  return;
+               }
+               resolve(json.location);
+            };
+
+            xhr.onerror = () => {
+               reject('Image upload failed due to a XHR Transport error. Code: ' + xhr.status);
+            };
+
+            const formData = new FormData();
+            formData.append('file', blobInfo.blob(), blobInfo.filename());
+            xhr.setRequestHeader('X-CSRF-TOKEN', $('meta[name="csrf-token"]').attr('content'));
+            xhr.send(formData);
+         });
+
+         tinymce.init({
+            selector: 'textarea.myeditor',
+            path_absolute: "https://piln.kemdikbud.go.id" + "/",
+            plugins: [
+               "image", "lists"
+            ],
+            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+            automatic_uploads: true,
+            relative_urls: false,
+            convert_urls: false,
+            images_upload_url: "https://piln.kemdikbud.go.id/upload",
+            file_picker_types: 'image',
+            images_upload_handler: example_image_upload_handler,
+            file_picker_callback: function(cb, value, meta) {
+               var input = document.createElement('input');
+               input.setAttribute('type', 'file');
+               input.setAttribute('accept', 'image/*');
+
+               input.onchange = function() {
+                  var file = this.files[0];
+
+                  var reader = new FileReader();
+                  reader.onload = function() {
+                     var id = 'blobid' + (new Date()).getTime();
+                     var blobCache = tinymce.activeEditor.editorUpload.blobCache;
+                     var base64 = reader.result.split(',')[1];
+                     var blobInfo = blobCache.create(id, file, base64);
+                     blobCache.add(blobInfo);
+
+                     /* call the callback and populate the Title field with the file name */
+                     cb(blobInfo.blobUri(), {
+                        title: file.name
+                     });
+                  };
+                  reader.readAsDataURL(file);
+               };
+
+               input.click();
+            }
+         });
+      }
+
+      // swal logout
+      $(".link-logout").click(function(e) {
+         e.preventDefault();
+         swal({
+            title: "Apakah anda ingin keluar dari sesi ini?",
+            icon: "warning",
+            buttons: {
+               cancel: {
+                  text: "Batal",
+                  value: null,
+                  visible: true,
+                  className: "",
+                  closeModal: true,
+               },
+               confirm: true,
+            },
+         }).then((value) => {
+            if (value) {
+               window.location.href = $('.link-logout').attr('href');
+            }
+         });
+      })
+
+      $(document).on("click", ".open-popup", function(e) {
+         $(this).magnificPopup({
+            type: 'inline',
+            showCloseBtn: false,
+            callbacks: {
+               beforeOpen: function() {
+                  if ($(window).width() < 700) {
+                     this.st.focus = false;
+                  } else {
+                     this.st.focus = '#name';
+                  }
+               }
+            }
+         }).magnificPopup('open');
+      });
+
+      $(document).on("click", ".close-popup", function(e) {
+         $.magnificPopup.close();
+      });
+   });
+
+   function addRequiredStar() {
+      let requiredStar = $("<span>")
+         .text("*")
+         .css("color", "#E74A3B");
+      $("label.required").append(requiredStar);
+   }
+
+   function initPopupHint() {
+      $('.pop-up-hint').magnificPopup({
+         type: 'inline',
+         preloader: false,
+         focus: '#name',
+
+         // When elemened is focused, some mobile browsers in some cases zoom in
+         // It looks not nice, so we disable it:
+         callbacks: {
+            beforeOpen: function() {
+               if ($(window).width() < 700) {
+                  this.st.focus = false;
+               } else {
+                  this.st.focus = '#name';
+               }
+            }
+         }
+      });
+   }
+
+   function generateHint() {
+      let selectedLabels = document.getElementsByClassName('need-hint');
+      let allFields = [...selectedLabels]
+         .map(el => el.htmlFor)
+         .filter(fieldName => (fieldName || "").length > 0);
+      let uniqueFields = [...new Set(allFields)];
+
+      const createHintModal = (mapLabelHint) => {
+         const mapHintModalId = Object.fromEntries(
+            Object.keys(mapLabelHint).map(fieldName => [fieldName, `${fieldName}_hint`])
+         );
+         Object.keys(mapLabelHint).forEach(fieldName => {
+            let modal = $("<div>")
+               .addClass("mfp-hide white-popup-block")
+               .prop("id", mapHintModalId[fieldName])
+               .html(`<p>${mapLabelHint[fieldName]}</p>`)
+            $("#hint-container").append(modal);
+         });
+         return mapHintModalId;
+      };
+
+      const putHintToLabels = (mapLabelHint, mapHintModalId) => {
+         $(selectedLabels).each(function() {
+            let fieldName = $(this).prop('for');
+            if ((fieldName || "").length > 0) {
+               let hintIcon = $("<a>")
+                  .addClass(
+                     "fa fa-info-circle click-tooltip-class text-dark text-decoration-none pop-up-hint pl-1"
+                  )
+                  .attr("aria-hidden", true)
+                  .prop("href", `#${mapHintModalId[fieldName]}`);
+               $(this).append(hintIcon);
+            }
+         });
+      };
+
+      if (uniqueFields.length > 0) {
+         $.ajax({
+            method: "POST",
+            url: "https://piln.kemdikbud.go.id/hint",
+            data: {
+               field_name: uniqueFields
+            },
+            success: function(data) {
+               let mapHintModalId = createHintModal(data);
+               putHintToLabels(data, mapHintModalId);
+               initPopupHint();
+            }
+         });
+      }
+   }
+
+   function getFullDate(stringDate) {
+      const date = new Date(stringDate);
+
+      const month = date.toLocaleString(DATE_LOCALE, {
+         month: "long"
+      });
+      const day = date.getDate();
+      const year = date.getFullYear();
+      const hour = date.getHours();
+      const time = date.getTime();
+      const minute = ('0' + date.getMinutes()).slice(-2);
+      const second = ('0' + date.getSeconds()).slice(-2);
+
+      return {
+         time,
+         day,
+         month,
+         year,
+         hour,
+         minute,
+         second
+      }
+   }
+
+   function swalOnRequest(isSuccess, successMessage, errorMessage) {
+
+      let swalPayload = {}
+      if (isSuccess) {
+         swalPayload = {
+            title: "Sukses",
+            text: successMessage,
+            icon: 'success',
+         }
+
+      } else {
+         swalPayload = {
+            title: "Gagal",
+            text: errorMessage,
+            icon: 'error',
+         };
+
+      }
+      swal(swalPayload);
+   }
+
+   const createImageCropper = () => ({
+      modal: null,
+      image: null,
+      cropper: null,
+      outputText: null,
+      initModal: function(modalSelector) {
+         this.modal = $(modalSelector);
+
+      },
+      initImage: function(imageSelector) {
+         this.image = document.querySelector(imageSelector);
+      },
+      initOutput: function(inputTextSelector) {
+         this.outputText = $(inputTextSelector);
+      },
+      initCropper: function(aspectRatio) {
+         const that = this;
+         this.modal.on('shown.bs.modal', function() {
+            that.cropper = new Cropper(that.image, {
+               aspectRatio,
+               viewMode: 3,
+               preview: '.preview'
+            });
+         }).on('hidden.bs.modal', function() {
+            that.cropper.destroy();
+            that.cropper = null;
+         });
+      },
+      initInputImage: function(inputImageSelector) {
+         const that = this;
+         $("body").on("change", inputImageSelector, function(e) {
+
+            const isInputValid = $(inputImageSelector).valid();
+
+            if (!isInputValid) return;
+
+            let files = e.target.files;
+            let done = function(url) {
+               that.image.src = url;
+               that.modal.modal('show');
+            };
+            let reader;
+            let file;
+            let url;
+            if (files && files.length > 0) {
+               file = files[0];
+               if (URL) {
+                  done(URL.createObjectURL(file));
+               } else if (FileReader) {
+                  reader = new FileReader();
+                  reader.onload = function(e) {
+                     done(reader.result);
+                  };
+                  reader.readAsDataURL(file);
+               }
+            }
+         });
+      },
+      doCropOnClick: function(buttonSelector, outputSize) {
+         const that = this;
+         const button = $(buttonSelector);
+         button.click(function() {
+            canvas = that.cropper.getCroppedCanvas({
+               width: outputSize.width,
+               height: outputSize.height,
+            });
+            canvas.toBlob(function(blob) {
+               let reader = new FileReader();
+               reader.readAsDataURL(blob);
+               reader.onloadend = function() {
+                  let base64data = reader.result;
+                  that.outputText.val(base64data);
+                  that.modal.modal('hide');
+               }
+            });
+         });
+      }
+   });
+</script>
+
+
+
+   <script>
+   function generateSwalPayload(title, message, icon) {
+      let form = document.createElement("div");
+      form.innerHTML = message;
+      return {
+         icon,
+         title,
+         html: true,
+         content: form,
+         confirmButtonText: "Tutup"
+      }
+   }
+</script>
+
+
+
+
+   <div id="hint-container"></div>
+
+      <script>
+   jQuery(document).ready(function() {
+      const datepickerFormatNormalizer = (value) => {
+         return value.replaceAll("/", "-");
+      };
+
+      $("form").each(function() {
+         let validateOptions = {
+            errorElement: 'div',
+            errorClass: 'invalid-feedback',
+
+            
+            errorPlacement: function(error, element) {
+               if (element.hasClass('select2-hidden-accessible')) {
+                  error.insertAfter(element.parent().find('.select2-container'));
+               } else {
+                  error.insertAfter(element);
+               }
+            },
+            highlight: function(element) {
+               $(element).removeClass('is-valid').addClass('is-invalid'); // add the Bootstrap error class to the control group
+            },
+
+            
+            ignore: ":hidden, [contenteditable='true']",
+            
+
+            unhighlight: function(element) {
+               $(element).removeClass('is-invalid').addClass('is-valid');
+            },
+
+            success: function(element) {
+               $(element).removeClass('is-invalid').addClass('is-valid'); // remove the Boostrap error class from the control group
+            },
+
+            focusInvalid: true,
+            
+            rules: {"email":{"laravelValidation":[["Required",[],"email wajib diisi.",true,"email"],["Email",[],"email harus berupa alamat surel yang valid.",false,"email"]]},"password":{"laravelValidation":[["Required",[],"password wajib diisi.",true,"password"],["String",[],"password harus berupa string.",false,"password"],["Min",["8"],"password minimal berisi 8 karakter.",false,"password"]]}}         };
+
+         if (Object.keys(validateOptions.rules).length > 0) {
+            for (const inputName in validateOptions.rules) {
+               const needReformating = $(`input[name='${inputName}']`).hasClass('need-datepicker-reformat');
+               if (needReformating) {
+                  validateOptions.rules[inputName].normalizer = datepickerFormatNormalizer;
+               }
+            }
+         }
+         $(this).validate(validateOptions);
+      });
+   });
+</script>
+
+</body>
+
+</html>
+￼Enter</script>
+
+
+
+   <script>
+   function generateSwalPayload(title, message, icon) {
+      let form = document.createElement("div");
+      form.innerHTML = message;
+      return {
+         icon,
+         title,
+         html: true,
+         content: form,
+         confirmButtonText: "Tutup"
+      }
+   }
+</script>
+
+
+
+
+   <div id="hint-container"></div>
+
+      <script>
+   jQuery(document).ready(function() {
+      const datepickerFormatNormalizer = (value) => {
+   return value.replaceAll("/", "-");
+      };
+
+      $("form").each(function() {
+         let validateOptions = {
+            errorElement: 'div',
+            errorClass: 'invalid-feedback',
+
+            
+            errorPlacement: function(error, element) {
+               if (element.hasClass('select2-hidden-accessible')) {
+                  error.insertAfter(element.parent().find('.select2-container'));
+               } else {
+                  error.insertAfter(element);
+               }
+            },
+            highlight: function(element) {
+               $(element).removeClass('is-valid').addClass('is-invalid'); // add the Bootstrap error class to the control group
+            },
+
+            
+            ignore: ":hidden, [contenteditable='true']",
+            
+
+            unhighlight: function(element) {
+               $(element).removeClass('is-invalid').addClass('is-valid');
